@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Studio Ljepote Selma — profesionalni beauty studio u Sarajevu. Manikir, makeup, trepavice, obrve. Čengić Vila, Džemala Bijedića 48." />
+  <meta property="og:title" content="Studio Ljepote Selma" />
+  <meta property="og:description" content="Tvoja ljepota, naša strast. Studio ljepote u srcu Sarajeva." />
+  <meta property="og:type" content="website" />
+  <title>Studio Ljepote Selma</title>
+
+  <!-- Google Fonts: Cormorant Garamond (elegantni serif) + Jost (clean sans-serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Stilovi -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       LEBDEĆE WHATSAPP DUGME — uvijek vidljivo u donjem desnom uglu
+       ============================================================ -->
+  <a
+    href="https://wa.me/38761375214"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Pišite nam na WhatsApp"
+    title="WhatsApp"
+  >
+    <!-- WhatsApp SVG ikona -->
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M16.001 2C8.28 2 2 8.28 2 16c0 2.478.665 4.801 1.817 6.808L2 30l7.381-1.793A13.93 13.93 0 0016.001 30C23.72 30 30 23.72 30 16S23.72 2 16.001 2zm0 25.455a11.43 11.43 0 01-5.808-1.587l-.416-.247-4.377 1.063 1.094-4.266-.272-.438A11.412 11.412 0 014.545 16c0-6.318 5.138-11.455 11.456-11.455C22.319 4.545 27.455 9.682 27.455 16S22.319 27.455 16.001 27.455zm6.29-8.573c-.345-.173-2.044-1.008-2.36-1.123-.317-.116-.548-.173-.779.173-.23.345-.893 1.123-1.094 1.354-.201.23-.403.26-.748.086-.345-.173-1.456-.537-2.774-1.711-1.025-.914-1.717-2.042-1.917-2.387-.201-.345-.021-.531.15-.703.155-.154.345-.404.518-.606.173-.202.23-.345.345-.576.116-.23.058-.433-.03-.606-.086-.173-.779-1.878-1.068-2.57-.28-.675-.567-.583-.779-.594-.2-.01-.432-.012-.664-.012-.23 0-.605.086-.921.433-.316.346-1.208 1.181-1.208 2.88 0 1.699 1.237 3.34 1.41 3.572.173.23 2.434 3.717 5.898 5.211.824.355 1.467.568 1.969.727.827.263 1.58.226 2.175.137.663-.1 2.044-.835 2.333-1.641.288-.806.288-1.497.202-1.641-.086-.144-.317-.23-.662-.403z"/>
+    </svg>
+  </a>
+
+  <!-- ============================================================
+       1. NAVIGACIJA
+       ============================================================ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Glavna navigacija">
+    <div class="nav__inner">
+
+      <!-- Logo -->
+      <a href="#hero" class="nav__logo" aria-label="Studio Ljepote Selma — početna">
+        Studio Ljepote Selma
+      </a>
+
+      <!-- Desktop navigacijski linkovi + CTA -->
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="#o-nama">O nama</a></li>
+        <li><a href="#usluge">Usluge</a></li>
+        <li><a href="#galerija">Galerija</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li>
+          <a href="#rezervacija" class="btn btn-rose" style="padding: 0.55rem 1.4rem; font-size: 0.82rem;">
+            Rezerviši termin
+          </a>
+        </li>
+      </ul>
+
+      <!-- Hamburger dugme (mobilni) -->
+      <button
+        class="nav__hamburger"
+        id="hamburger"
+        aria-label="Otvori/zatvori meni"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       2. HERO SEKCIJA
+       ============================================================ -->
+  <section class="hero" id="hero" aria-label="Naslovna sekcija">
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">Sarajevo · Čengić Vila</p>
+      <h1 class="hero__title">Tvoja ljepota,<br>naša strast.</h1>
+      <p class="hero__subtitle">Studio ljepote u srcu Sarajeva</p>
+      <div class="hero__buttons">
+        <a href="#rezervacija" class="btn btn-rose">Rezerviši termin</a>
+        <a href="#usluge" class="btn btn-outline">Pogledaj usluge</a>
+      </div>
+    </div>
+
+    <!-- Scroll indikator -->
+    <div class="hero__scroll" aria-hidden="true">Scroll</div>
+
+  </section>
+
+  <hr class="gold-rule" />
+
+  <!-- ============================================================
+       3. O NAMA SEKCIJA
+       ============================================================ -->
+  <section class="about section-pad" id="o-nama" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about__grid">
+
+        <!-- Slika lijevo -->
+        <div class="about__image-wrap fade-in">
+          <img
+            src="images/about.jpg"
+            alt="Unutrašnjost Studia Ljepote Selma u Sarajevu"
+            loading="lazy"
+            onerror="this.style.display='none'"
+          />
+        </div>
+
+        <!-- Tekst desno -->
+        <div class="about__text fade-in">
+          <p class="about__subtitle">Naša priča</p>
+          <h2 class="section-title" id="about-title">
+            Dobrodošli u Studio Ljepote Selma
+          </h2>
+          <p class="about__body">
+            Studio Ljepote Selma nalazi se u Čengić Vili, na adresi Džemala Bijedića 48.
+            Naša misija je da svaka klijentica izađe iz studija osjećajući se lijepo,
+            samopouzdano i zadovoljno. Radimo s ljubavlju, pažnjom i profesionalizmom —
+            jer svaka žena zaslužuje tretman po mjeri.
+          </p>
+          <p class="about__body" style="margin-top: 1rem;">
+            Koristimo isključivo visokokvalitetne proizvode i pratimo najnovije trendove
+            u beauty industriji, sve uz punu posvećenost svakoj klijentici. Vaš odmor
+            i uljepšavanje naša je strast.
+          </p>
+
+          <!-- Detalji studija -->
+          <div class="about__detail">
+            <div class="about__detail-item">
+              <div class="about__detail-num">5+</div>
+              <div class="about__detail-label">Godina iskustva</div>
+            </div>
+            <div class="about__detail-item">
+              <div class="about__detail-num">500+</div>
+              <div class="about__detail-label">Zadovoljnih klijentica</div>
+            </div>
+            <div class="about__detail-item">
+              <div class="about__detail-num">4</div>
+              <div class="about__detail-label">Kategorije usluga</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-rule" />
+
+  <!-- ============================================================
+       4. USLUGE SEKCIJA
+       ============================================================ -->
+  <section class="services section-pad" id="usluge" aria-labelledby="services-title">
+    <div class="container">
+
+      <div class="services__intro fade-in">
+        <h2 class="section-title centered" id="services-title">Naše Usluge</h2>
+        <p>Nudimo širok spektar beauty tretmana prilagođenih svakom tipu klijentica — od svakodnevnog njege do glamuroznih transformacija.</p>
+      </div>
+
+      <div class="services__grid">
+
+        <!-- Kartica 1: Manikir -->
+        <div class="service-card fade-in">
+          <span class="service-card__icon" aria-hidden="true">✦</span>
+          <h3 class="service-card__title">Manikir</h3>
+          <p class="service-card__desc">
+            Ruski manikir, gel, trajni lak, rubber baza, izlivanje noktiju — preciznost i kvalitet u svakom detalju.
+          </p>
+          <a href="#cjenovnik" class="service-card__link" aria-label="Pogledaj cijene za manikir">Pogledaj cijene →</a>
+        </div>
+
+        <!-- Kartica 2: Makeup -->
+        <div class="service-card fade-in">
+          <span class="service-card__icon" aria-hidden="true">✦</span>
+          <h3 class="service-card__title">Makeup</h3>
+          <p class="service-card__desc">
+            Dnevni i Glam makeup po mjeri — naglašavamo vaš prirodni sjaj ili stvaramo dramatičan, upečatljiv look.
+          </p>
+          <a href="#cjenovnik" class="service-card__link" aria-label="Pogledaj cijene za makeup">Pogledaj cijene →</a>
+        </div>
+
+        <!-- Kartica 3: Trepavice -->
+        <div class="service-card fade-in">
+          <span class="service-card__icon" aria-hidden="true">✦</span>
+          <h3 class="service-card__title">Trepavice</h3>
+          <p class="service-card__desc">
+            Nadogradnja svilenih trepavica tehnikom 1:1, lash lift — dugi, gustih, prirodni ili dramatični efekt.
+          </p>
+          <a href="#cjenovnik" class="service-card__link" aria-label="Pogledaj cijene za trepavice">Pogledaj cijene →</a>
+        </div>
+
+        <!-- Kartica 4: Obrve -->
+        <div class="service-card fade-in">
+          <span class="service-card__icon" aria-hidden="true">✦</span>
+          <h3 class="service-card__title">Obrve</h3>
+          <p class="service-card__desc">
+            Brow lift, oblikovanje i bojanje — definišemo i uokvirujemo vaš pogled za savršeno lice.
+          </p>
+          <a href="#cjenovnik" class="service-card__link" aria-label="Pogledaj cijene za obrve">Pogledaj cijene →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-rule" />
+
+  <!-- ============================================================
+       5. CJENOVNIK SA TABOVIMA
+       ============================================================ -->
+  <section class="pricing section-pad" id="cjenovnik" aria-labelledby="pricing-title">
+    <div class="container">
+
+      <div class="pricing__intro fade-in">
+        <h2 class="section-title centered" id="pricing-title">Cjenovnik</h2>
+      </div>
+
+      <!-- Tab navigacija -->
+      <div class="tabs fade-in">
+        <div class="tab-nav" role="tablist" aria-label="Kategorije cijena">
+          <button
+            class="tab-btn active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="tab-manikir"
+            id="btn-manikir"
+            data-tab="manikir"
+          >Manikir</button>
+          <button
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-makeup"
+            id="btn-makeup"
+            data-tab="makeup"
+          >Makeup</button>
+          <button
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-trepavice"
+            id="btn-trepavice"
+            data-tab="trepavice"
+          >Trepavice</button>
+        </div>
+
+        <!-- TAB 1: MANIKIR -->
+        <div
+          class="tab-panel active"
+          id="tab-manikir"
+          role="tabpanel"
+          aria-labelledby="btn-manikir"
+        >
+          <div class="price-category">
+            <h3 class="price-category__title">Manikir</h3>
+            <div class="price-row">
+              <span class="price-row__name">Ruski manikir</span>
+              <span class="price-row__price">20 KM</span>
+            </div>
+            <div class="price-row">
+              <span class="price-row__name">Skidanje gela</span>
+              <span class="price-row__price">15 KM</span>
+            </div>
+            <div class="price-row">
+              <span class="price-row__name">Trajni lak / rubber baza</span>
+              <span class="price-row__price">35 KM</span>
+            </div>
+            <div class="price-row">
+              <span class="price-row__name">Gel na prirodne nokte S</span>
+              <span class="price-row__price">40 KM</span>
+            </div>
+            <div class="price-row">
+              <span class="price-row__name">Gel na prirodne nokte M</span>
+              <span class="price-row__price">45 KM</span>
+            </div>
+            <div class="price-row">
+              <span class="price-row__name">Izlivanje noktiju S, M</span>
+              <span class="price-row__price">50 KM</span>
+            </div>
+            <div class="price-row">
+              <span class="price-row__name">Izlivanje noktiju L</span>
+              <span class="price-row__price">55 KM</span>
+            </div>
+          </div>
+
+          <div class="price-category">
+            <h3 class="price-category__title">Dodatno</h3>
+            <div class="price-row">
+              <span class="price-row__name">French</span>
+              <span class="price-row__price">5 KM</span>
+            </div>
+            <div class="price-row">
+              <span class="price-row__name">Ombre</span>
+              <span class="price-row__price">5 KM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: MAKEUP -->
+        <div
+          class="tab-panel"
+          id="tab-makeup"
+          role="tabpanel"
+          aria-labelledby="btn-makeup"
+        >
+          <div class="price-category">
+            <h3 class="price-category__title">Makeup</h3>
+            <div class="price-row">
+              <span class="price-row__name">Dnevni makeup</span>
+              <span class="price-row__price">50 KM</span>
+            </div>
+            <div class="price-row">
+              <span class="price-row__name">Glam makeup</span>
+              <span class="price-row__price">60 KM</span>
+            </div>
+            <div class="price-row">
+              <span class="price-row__name">Lash lift</span>
+              <span class="price-row__price">35 KM</span>
+            </div>
+            <div class="price-row">
+              <span class="price-row__name">Brow lift</span>
+              <span class="price-row__price">35 KM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: TREPAVICE -->
+        <div
+          class="tab-panel"
+          id="tab-trepavice"
+          role="tabpanel"
+          aria-labelledby="btn-trepavice"
+        >
+          <div class="price-category">
+            <h3 class="price-category__title">Trepavice</h3>
+            <div class="price-row">
+              <span class="price-row__name">Tehnika 1:1 (Svilene trepavice)</span>
+              <span class="price-row__price">50 KM</span>
+            </div>
+            <div class="price-row">
+              <span class="price-row__name">Korekcija nakon 2 sedmice</span>
+              <span class="price-row__price">30 KM</span>
+            </div>
+            <div class="price-row">
+              <span class="price-row__name">Korekcija nakon 3 sedmice</span>
+              <span class="price-row__price">40 KM</span>
+            </div>
+            <div class="price-row">
+              <span class="price-row__name">Skidanje trepavica</span>
+              <span class="price-row__price">10 KM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Napomena ispod tabova -->
+        <p class="pricing__note">
+          Cijene su okvirne. Za više informacija kontaktirajte nas na
+          <a href="tel:+38761375214">+387 61 375 214</a>.
+        </p>
+
+      </div><!-- .tabs -->
+    </div>
+  </section>
+
+  <hr class="gold-rule" />
+
+  <!-- ============================================================
+       6. GALERIJA
+       ============================================================ -->
+  <section class="gallery section-pad" id="galerija" aria-labelledby="gallery-title">
+    <div class="container">
+
+      <div class="gallery__intro fade-in">
+        <h2 class="section-title centered" id="gallery-title">Galerija</h2>
+        <p style="text-align:center; color:#6a6a6a; font-weight:300; margin-top:0.75rem;">
+          Pogledajte naše radove
+        </p>
+      </div>
+
+      <!-- Masonry grid sa 9 slika -->
+      <div class="gallery__grid fade-in" role="list" aria-label="Galerija naših radova">
+
+        <div class="gallery__item" role="listitem">
+          <img src="images/gallery/1.jpg" alt="Galerija rad 1 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
+        </div>
+        <div class="gallery__item" role="listitem">
+          <img src="images/gallery/2.jpg" alt="Galerija rad 2 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
+        </div>
+        <div class="gallery__item" role="listitem">
+          <img src="images/gallery/3.jpg" alt="Galerija rad 3 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
+        </div>
+        <div class="gallery__item" role="listitem">
+          <img src="images/gallery/4.jpg" alt="Galerija rad 4 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
+        </div>
+        <div class="gallery__item" role="listitem">
+          <img src="images/gallery/5.jpg" alt="Galerija rad 5 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
+        </div>
+        <div class="gallery__item" role="listitem">
+          <img src="images/gallery/6.jpg" alt="Galerija rad 6 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
+        </div>
+        <div class="gallery__item" role="listitem">
+          <img src="images/gallery/7.jpg" alt="Galerija rad 7 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
+        </div>
+        <div class="gallery__item" role="listitem">
+          <img src="images/gallery/8.jpg" alt="Galerija rad 8 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
+        </div>
+        <div class="gallery__item" role="listitem">
+          <img src="images/gallery/9.jpg" alt="Galerija rad 9 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
+        </div>
+
+      </div>
+
+      <!-- Instagram CTA -->
+      <div class="gallery__cta fade-in">
+        <p>Pratite nas za dnevne inspiracije i radove</p>
+        <a
+          href="https://www.instagram.com/studioljepote_selma/"
+          class="btn btn-outline-dark"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Posjetite Instagram profil Studio Ljepote Selma"
+        >
+          Pratite nas @studioljepote_selma ↗
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="gold-rule" />
+
+  <!-- ============================================================
+       7. REZERVACIJA (Booking)
+       ============================================================ -->
+  <section class="booking section-pad" id="rezervacija" aria-labelledby="booking-title">
+    <div class="container">
+      <div class="booking__inner fade-in">
+
+        <h2 class="section-title centered" id="booking-title">Zakaži Termin</h2>
+        <p class="booking__subtitle">
+          Pošaljite nam poruku putem WhatsAppa ili ispunite formu ispod.<br>
+          Odgovaramo u najkraćem mogućem roku.
+        </p>
+
+        <!-- WhatsApp CTA dugme -->
+        <a
+          href="https://wa.me/38761375214"
+          class="btn-whatsapp"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Pišite nam na WhatsApp"
+        >
+          <!-- WhatsApp mini ikona -->
+          <svg width="22" height="22" viewBox="0 0 32 32" fill="white" aria-hidden="true">
+            <path d="M16.001 2C8.28 2 2 8.28 2 16c0 2.478.665 4.801 1.817 6.808L2 30l7.381-1.793A13.93 13.93 0 0016.001 30C23.72 30 30 23.72 30 16S23.72 2 16.001 2zm6.29 19.882c-.345-.173-2.044-1.008-2.36-1.123-.317-.116-.548-.173-.779.173-.23.345-.893 1.123-1.094 1.354-.201.23-.403.26-.748.086-.345-.173-1.456-.537-2.774-1.711-1.025-.914-1.717-2.042-1.917-2.387-.201-.345-.021-.531.15-.703.155-.154.345-.404.518-.606.173-.202.23-.345.345-.576.116-.23.058-.433-.03-.606-.086-.173-.779-1.878-1.068-2.57-.28-.675-.567-.583-.779-.594-.2-.01-.432-.012-.664-.012-.23 0-.605.086-.921.433-.316.346-1.208 1.181-1.208 2.88 0 1.699 1.237 3.34 1.41 3.572.173.23 2.434 3.717 5.898 5.211.824.355 1.467.568 1.969.727.827.263 1.58.226 2.175.137.663-.1 2.044-.835 2.333-1.641.288-.806.288-1.497.202-1.641-.086-.144-.317-.23-.662-.403z"/>
+          </svg>
+          Pišite nam na WhatsApp
+        </a>
+
+        <!-- Separator "ili" -->
+        <div class="booking__divider" aria-hidden="true">ili</div>
+
+        <!-- Kontakt forma -->
+        <!-- Zamijeni PLACEHOLDER sa tvojim Formspree ID-om: https://formspree.io/f/YOUR_ID -->
+        <form
+          class="booking__form"
+          action="https://formspree.io/f/PLACEHOLDER"
+          method="POST"
+          aria-label="Forma za zakazivanje termina"
+        >
+          <div class="form-group">
+            <label for="name">Vaše ime i prezime</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Npr. Amira Hodžić"
+              required
+              autocomplete="name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Broj telefona</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+387 6x xxx xxx"
+              required
+              autocomplete="tel"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Usluga</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Odaberite uslugu</option>
+              <optgroup label="Manikir">
+                <option>Ruski manikir</option>
+                <option>Skidanje gela</option>
+                <option>Trajni lak / rubber baza</option>
+                <option>Gel na prirodne nokte S</option>
+                <option>Gel na prirodne nokte M</option>
+                <option>Izlivanje noktiju S, M</option>
+                <option>Izlivanje noktiju L</option>
+              </optgroup>
+              <optgroup label="Makeup">
+                <option>Dnevni makeup</option>
+                <option>Glam makeup</option>
+                <option>Lash lift</option>
+                <option>Brow lift</option>
+              </optgroup>
+              <optgroup label="Trepavice">
+                <option>Tehnika 1:1 (Svilene trepavice)</option>
+                <option>Korekcija nakon 2 sedmice</option>
+                <option>Korekcija nakon 3 sedmice</option>
+                <option>Skidanje trepavica</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Poruka (opciono)</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Napišite željeni datum, vrijeme ili bilo što što želite da znamo..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-rose form-submit">
+            Pošalji upit
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-rule" />
+
+  <!-- ============================================================
+       8. KONTAKT + MAPA
+       ============================================================ -->
+  <section class="contact section-pad" id="kontakt" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact__grid">
+
+        <!-- Lijevo: kontakt informacije -->
+        <div class="contact__info fade-in">
+          <h2 class="section-title" id="contact-title">Kontakt</h2>
+
+          <ul class="contact__list">
+
+            <li class="contact__item">
+              <span class="contact__item-icon" aria-hidden="true">📍</span>
+              <div class="contact__item-text">
+                <strong>Adresa</strong>
+                Džemala Bijedića 48, Čengić Vila<br>Sarajevo, Bosna i Hercegovina
+              </div>
+            </li>
+
+            <li class="contact__item">
+              <span class="contact__item-icon" aria-hidden="true">📞</span>
+              <div class="contact__item-text">
+                <strong>Telefon</strong>
+                <a href="tel:+38761375214">+387 61 375 214</a>
+              </div>
+            </li>
+
+            <li class="contact__item">
+              <span class="contact__item-icon" aria-hidden="true">📸</span>
+              <div class="contact__item-text">
+                <strong>Instagram</strong>
+                <a
+                  href="https://www.instagram.com/studioljepote_selma/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >@studioljepote_selma</a>
+              </div>
+            </li>
+
+            <li class="contact__item">
+              <span class="contact__item-icon" aria-hidden="true">🕐</span>
+              <div class="contact__item-text">
+                <strong>Radno vrijeme</strong>
+                Ponedjeljak – Subota: 09:00 – 20:00<br>
+                <span style="color:#999; font-size:0.85rem;">Nedjelja: zatvoreno</span>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- Desno: Google Maps embed -->
+        <div class="contact__map fade-in" aria-label="Mapa lokacije studija">
+          <!--
+            Google Maps embed za Džemala Bijedića 48, Sarajevo.
+            Za bolju tačnost možeš generisati vlastiti embed link na:
+            https://www.google.com/maps/embed
+          -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.123456789!2d18.39!3d43.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758c9657fe7ec61%3A0x1a2b3c4d5e6f7890!2sDžemala%20Bijedića%2048%2C%20Sarajevo!5e0!3m2!1sbs!2sba!4v1700000000000!5m2!1sbs!2sba"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokacija Studia Ljepote Selma — Džemala Bijedića 48, Sarajevo"
+          ></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9. FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+
+    <a href="#hero" class="footer__logo" aria-label="Studio Ljepote Selma — povratak na vrh">
+      Studio Ljepote Selma
+    </a>
+
+    <!-- Instagram link u footeru -->
+    <div class="footer__social">
+      <a
+        href="https://www.instagram.com/studioljepote_selma/"
+        class="footer__ig-link"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Posjetite naš Instagram profil"
+      >
+        <!-- Instagram SVG ikona -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+        @studioljepote_selma
+      </a>
+    </div>
+
+    <p class="footer__copy">
+      &copy; 2025 Studio Ljepote Selma. Sva prava zadržana.
+    </p>
+
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT — Vanilla JS, bez eksternih biblioteka
+       ============================================================ -->
+  <script>
+    /* ----------------------------------------------------------
+       1. STICKY NAVIGACIJA — dodaje .scrolled klasu pri scrollu
+       ---------------------------------------------------------- */
+    const nav = document.getElementById('nav');
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 40) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    /* ----------------------------------------------------------
+       2. HAMBURGER MENI — toggle mobilnog menija
+       ---------------------------------------------------------- */
+    const hamburger = document.getElementById('hamburger');
+
+    hamburger.addEventListener('click', function () {
+      const isOpen = nav.classList.toggle('nav-open');
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Zatvori meni kad korisnik klikne na link
+    document.querySelectorAll('.nav__links a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        nav.classList.remove('nav-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ----------------------------------------------------------
+       3. TABOVI U CJENOVNIKU — vanilla JS tab switching
+       ---------------------------------------------------------- */
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const targetTab = btn.getAttribute('data-tab');
+
+        // Ukloni active sa svih tabova i panela
+        tabBtns.forEach(function (b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        tabPanels.forEach(function (p) {
+          p.classList.remove('active');
+        });
+
+        // Aktiviraj kliknuti tab i odgovarajući panel
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        document.getElementById('tab-' + targetTab).classList.add('active');
+      });
+    });
+
+    /* ----------------------------------------------------------
+       4. INTERSECTION OBSERVER — fade-in animacije pri scrollu
+       Posmatramo sve elemente sa .fade-in klasom i dodajemo
+       .visible klasu kad uđu u viewport (pokreće CSS animaciju)
+       ---------------------------------------------------------- */
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              // Prestanemo posmatrati element nakon što se animira
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,      // 12% elementa mora biti vidljivo
+          rootMargin: '0px 0px -40px 0px'  // Malo ranije okida
+        }
+      );
+
+      fadeElements.forEach(function (el) {
+        observer.observe(el);
+      });
+    } else {
+      // Fallback za starije browsere — odmah prikaži sve
+      fadeElements.forEach(function (el) {
+        el.classList.add('visible');
+      });
+    }
+  </script>
+
+</body>
+</html>

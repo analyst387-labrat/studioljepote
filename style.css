@@ -1,0 +1,1158 @@
+/* ============================================================
+   CSS CUSTOM PROPERTIES (varijable boja i tipografije)
+   ============================================================ */
+:root {
+  --bg:       #FAF7F4;
+  --rose:     #C9847A;
+  --rose-dark:#b5726a;
+  --charcoal: #2C2C2C;
+  --gold:     #C9A96E;
+  --gold-light:#e0c48a;
+  --white:    #FFFFFF;
+  --warm-bg:  #FAF0EC;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  'Jost', system-ui, sans-serif;
+  --transition: 0.3s ease;
+  --radius: 4px;
+  --shadow: 0 4px 24px rgba(44,44,44,0.08);
+}
+
+/* ============================================================
+   RESET I BAZA
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--charcoal);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ============================================================
+   UTILITY KLASE
+   ============================================================ */
+
+/* Kontejner — centrira sadržaj, max širina 1100px */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Naslovi sekcija */
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+/* Zlatna linija ispod naslova sekcije */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin-top: 0.6rem;
+}
+
+.section-title.centered {
+  text-align: center;
+}
+
+.section-title.centered::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Padding za sekcije */
+.section-pad {
+  padding: 5rem 0;
+}
+
+/* Zlatni horizontalni separator između sekcija */
+.gold-rule {
+  border: none;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.35;
+  margin: 0;
+}
+
+/* ============================================================
+   ANIMACIJA FADE-IN (aktivira se Intersection Observerom)
+   ============================================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Kaskadna kašnjenja za elemente u nizu */
+.fade-in:nth-child(2) { transition-delay: 0.1s; }
+.fade-in:nth-child(3) { transition-delay: 0.2s; }
+.fade-in:nth-child(4) { transition-delay: 0.3s; }
+
+/* ============================================================
+   DUGMAD (buttons)
+   ============================================================ */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition);
+  text-align: center;
+}
+
+/* Ispunjeno rose dugme */
+.btn-rose {
+  background: var(--rose);
+  color: var(--white);
+  border-color: var(--rose);
+}
+
+.btn-rose:hover {
+  background: var(--rose-dark);
+  border-color: var(--rose-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201,132,122,0.35);
+}
+
+/* Outline bijelo dugme (za hero na tamnoj pozadini) */
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,0.8);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Outline tamno dugme */
+.btn-outline-dark {
+  background: transparent;
+  color: var(--charcoal);
+  border-color: var(--charcoal);
+}
+
+.btn-outline-dark:hover {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+/* ============================================================
+   1. NAVIGACIJA
+   ============================================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,247,244,0.85);
+  transition: box-shadow var(--transition), background var(--transition);
+}
+
+/* Kad korisnik scrolla — dodaje se .scrolled klasa via JS */
+.nav.scrolled {
+  background: rgba(250,247,244,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(44,44,44,0.08);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.nav__logo {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Desktop navigation linkovi */
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav__links a {
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--charcoal);
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--rose);
+  transition: width var(--transition);
+}
+
+.nav__links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger dugme — vidljivo samo na mobilnom */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 110;
+}
+
+.nav__hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--charcoal);
+  transition: all var(--transition);
+  transform-origin: center;
+}
+
+/* Transformacija hamburger → X kada je meni otvoren */
+.nav.nav-open .nav__hamburger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav.nav-open .nav__hamburger span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav.nav-open .nav__hamburger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================================
+   2. HERO SEKCIJA
+   ============================================================ */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Fallback gradijent ako images/hero.jpg ne postoji */
+  background: linear-gradient(135deg, #C9847A 0%, #b5726a 40%, #C9A96E 100%);
+  background-image: url('images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Tamni overlay za čitljivost teksta */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+  padding: 0 1.5rem;
+  max-width: 800px;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 1rem;
+}
+
+.hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.hero__subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.04em;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Scroll indikator na dnu heroja */
+.hero__scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero__scroll::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.4);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(0.6); }
+}
+
+/* ============================================================
+   3. O NAMA SEKCIJA
+   ============================================================ */
+.about {
+  background: var(--bg);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about__image-wrap {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  /* Fallback ako about.jpg ne postoji */
+  background: linear-gradient(145deg, #e8d5d1 0%, #f0e0c8 100%);
+}
+
+.about__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Zlatni ukrasni okvir pomaknut za offset efekt */
+.about__image-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  width: 70%;
+  height: 70%;
+  border: 2px solid var(--gold);
+  opacity: 0.5;
+  border-radius: var(--radius);
+  pointer-events: none;
+}
+
+.about__text {
+  padding: 1rem 0;
+}
+
+.about__subtitle {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 1rem;
+}
+
+.about__body {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #4a4a4a;
+  margin-top: 1.5rem;
+}
+
+.about__detail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(201,169,110,0.3);
+}
+
+.about__detail-item {
+  text-align: center;
+  flex: 1;
+}
+
+.about__detail-num {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--rose);
+}
+
+.about__detail-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+/* ============================================================
+   4. USLUGE SEKCIJA
+   ============================================================ */
+.services {
+  background: var(--warm-bg);
+}
+
+.services__intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3.5rem;
+}
+
+.services__intro p {
+  color: #6a6a6a;
+  font-weight: 300;
+  margin-top: 1rem;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rose), var(--gold));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-bottom-color: var(--rose);
+  box-shadow: 0 12px 40px rgba(44,44,44,0.12);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card__icon {
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.service-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.service-card__desc {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #6a6a6a;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.service-card__link {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rose);
+  border-bottom: 1px solid var(--rose);
+  padding-bottom: 2px;
+  transition: color var(--transition);
+}
+
+.service-card__link:hover {
+  color: var(--rose-dark);
+}
+
+/* ============================================================
+   5. CJENOVNIK (Tabs)
+   ============================================================ */
+.pricing {
+  background: var(--bg);
+}
+
+.pricing__intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Tab navigacija */
+.tabs {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.tab-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  border-bottom: 1px solid rgba(201,169,110,0.3);
+  margin-bottom: 2.5rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all var(--transition);
+}
+
+.tab-btn:hover {
+  color: var(--charcoal);
+}
+
+/* Aktivni tab — zlatni underline */
+.tab-btn.active {
+  color: var(--charcoal);
+  border-bottom-color: var(--gold);
+}
+
+/* Panel sadržaj — sakriven po defaultu */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.price-category {
+  margin-bottom: 2rem;
+}
+
+.price-category__title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(201,132,122,0.2);
+}
+
+/* Red cijena — naziv lijevo, cijena desno */
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(44,44,44,0.06);
+  gap: 1rem;
+}
+
+.price-row:last-child {
+  border-bottom: none;
+}
+
+.price-row__name {
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+.price-row__price {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  white-space: nowrap;
+}
+
+.pricing__note {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+}
+
+.pricing__note a {
+  color: var(--rose);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   6. GALERIJA
+   ============================================================ */
+.gallery {
+  background: var(--warm-bg);
+}
+
+.gallery__intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* CSS masonry pomoću columns */
+.gallery__grid {
+  columns: 3;
+  column-gap: 1rem;
+}
+
+.gallery__item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  /* Fallback gradijenti ako slike ne postoje */
+  background: linear-gradient(135deg, #e8d0cb 0%, #f0e4d0 100%);
+  min-height: 200px;
+}
+
+/* Različiti fallback gradijenti po neparnom/parnom redu */
+.gallery__item:nth-child(even) {
+  background: linear-gradient(135deg, #d4b8b4 0%, #e8d5be 100%);
+}
+
+.gallery__item:nth-child(3n) {
+  background: linear-gradient(135deg, #c9a96e30 0%, #c9847a30 100%);
+}
+
+.gallery__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Hover overlay na galeriji */
+.gallery__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(201,132,122,0);
+  transition: background 0.4s ease;
+}
+
+.gallery__item:hover::after {
+  background: rgba(201,132,122,0.35);
+}
+
+.gallery__item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery__cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.gallery__cta p {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+/* ============================================================
+   7. REZERVACIJA (Booking)
+   ============================================================ */
+.booking {
+  background: var(--warm-bg);
+}
+
+.booking__inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.booking__subtitle {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #6a6a6a;
+  margin: 1.2rem 0 2.5rem;
+  line-height: 1.7;
+}
+
+/* WhatsApp CTA dugme */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #25D366;
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all var(--transition);
+  box-shadow: 0 6px 24px rgba(37,211,102,0.3);
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(37,211,102,0.4);
+}
+
+.booking__divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem 0;
+  color: #bbb;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.booking__divider::before,
+.booking__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(44,44,44,0.15);
+}
+
+/* Forma za kontakt */
+.booking__form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(44,44,44,0.15);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--charcoal);
+  transition: border-color var(--transition);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(201,132,122,0.12);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   8. KONTAKT + MAPA
+   ============================================================ */
+.contact {
+  background: var(--bg);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact__info .section-title {
+  margin-bottom: 2rem;
+}
+
+.contact__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact__item-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.contact__item-text {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.contact__item-text strong {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0.2rem;
+}
+
+.contact__item-text a {
+  color: var(--charcoal);
+  transition: color var(--transition);
+}
+
+.contact__item-text a:hover {
+  color: var(--rose);
+}
+
+/* Google Maps iframe */
+.contact__map {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  height: 400px;
+}
+
+.contact__map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ============================================================
+   9. FOOTER
+   ============================================================ */
+.footer {
+  background: var(--charcoal);
+  color: rgba(255,255,255,0.7);
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.footer__logo {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.footer__ig-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  transition: color var(--transition);
+}
+
+.footer__ig-link:hover {
+  color: var(--gold);
+}
+
+.footer__copy {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   LEBDEĆE WHATSAPP DUGME (uvijek vidljivo)
+   ============================================================ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+  transition: all var(--transition);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 32px rgba(37,211,102,0.55);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--white);
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (max 900px)
+   ============================================================ */
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about__image-wrap {
+    aspect-ratio: 16/9;
+    max-height: 380px;
+  }
+
+  .about__image-wrap::after {
+    display: none;
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .gallery__grid {
+    columns: 2;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILNI (max 640px)
+   ============================================================ */
+@media (max-width: 640px) {
+  /* Sakrivamo desktop linkove na mobilnom */
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(250,247,244,0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 1rem 0 1.5rem;
+    box-shadow: 0 8px 24px rgba(44,44,44,0.1);
+    border-top: 1px solid rgba(201,169,110,0.2);
+  }
+
+  .nav__links a {
+    padding: 0.85rem 2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* CTA dugme u mobilnoj navigaciji */
+  .nav__links .btn {
+    margin-top: 0.5rem;
+    border-radius: 2rem;
+  }
+
+  /* Prikazuje linkove kad je meni otvoren */
+  .nav.nav-open .nav__links {
+    display: flex;
+  }
+
+  /* Hamburger vidljiv na mobilnom */
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .section-pad {
+    padding: 3.5rem 0;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__buttons .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .gallery__grid {
+    columns: 1;
+  }
+
+  .tab-btn {
+    padding: 0.75rem 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  .about__detail {
+    gap: 0.5rem;
+  }
+}
