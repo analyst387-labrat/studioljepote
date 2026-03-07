@@ -45,7 +45,7 @@
 
       <!-- Logo -->
       <a href="#hero" class="nav__logo" aria-label="Studio Ljepote Selma — početna">
-        Studio Ljepote Selma
+        <img src="images/SLJS Logo.png" alt="Studio Ljepote Selma" class="nav__logo-img" />
       </a>
 
       <!-- Desktop navigacijski linkovi + CTA -->
@@ -78,24 +78,70 @@
   </nav>
 
   <!-- ============================================================
-       2. HERO SEKCIJA
+       2. HERO — Header strip + Service category cards (p-de-p style)
        ============================================================ -->
-  <section class="hero" id="hero" aria-label="Naslovna sekcija">
 
-    <div class="hero__content">
-      <p class="hero__eyebrow">Sarajevo · Čengić Vila</p>
-      <h1 class="hero__title">Tvoja ljepota,<br>naša strast.</h1>
-      <p class="hero__subtitle">Studio ljepote u srcu Sarajeva</p>
-      <div class="hero__buttons">
+  <!-- Part A: Header strip s logom i taglineom -->
+  <section class="hero-header" id="hero" aria-label="Naslovna sekcija">
+    <div class="hero-header__inner">
+      <img
+        src="images/SLJS Logo.png"
+        alt="Studio Ljepote Selma"
+        class="hero-logo"
+      />
+      <h1 class="hero-title">Tvoja ljepota, naša strast.</h1>
+      <p class="hero-subtitle">Studio ljepote u srcu Sarajeva &mdash; Čengić Vila, Džemala Bijedića 48</p>
+      <div class="hero-header__buttons">
         <a href="#rezervacija" class="btn btn-rose">Rezerviši termin</a>
-        <a href="#usluge" class="btn btn-outline">Pogledaj usluge</a>
+        <a href="#o-nama" class="btn btn-outline-dark">Saznaj više</a>
       </div>
     </div>
-
-    <!-- Scroll indikator -->
-    <div class="hero__scroll" aria-hidden="true">Scroll</div>
-
   </section>
+
+  <!-- Part B: 4 service category cards -->
+  <div class="hero-cards" aria-label="Naše usluge">
+
+    <a href="#cjenovnik" class="hero-card" aria-label="Manikir usluge">
+      <div class="hero-card__bg" style="background-image: url('images/Nails 1.jpg');"></div>
+      <div class="hero-card__overlay"></div>
+      <div class="hero-card__content">
+        <h2 class="hero-card__title">Manikir</h2>
+        <p class="hero-card__sub">Ruski manikir, gel, trajni lak, izlivanje</p>
+        <span class="hero-card__link">Pogledaj cijene →</span>
+      </div>
+    </a>
+
+    <a href="#cjenovnik" class="hero-card" aria-label="Makeup usluge">
+      <div class="hero-card__bg" style="background-image: url('images/Nails 2.jpg');"></div>
+      <div class="hero-card__overlay"></div>
+      <div class="hero-card__content">
+        <h2 class="hero-card__title">Makeup</h2>
+        <p class="hero-card__sub">Dnevni i Glam makeup po mjeri</p>
+        <span class="hero-card__link">Pogledaj cijene →</span>
+      </div>
+    </a>
+
+    <a href="#cjenovnik" class="hero-card" aria-label="Trepavice usluge">
+      <div class="hero-card__bg" style="background-image: url('images/Nails 3.jpg');"></div>
+      <div class="hero-card__overlay"></div>
+      <div class="hero-card__content">
+        <h2 class="hero-card__title">Trepavice</h2>
+        <p class="hero-card__sub">Nadogradnja svilenih trepavica, lash lift</p>
+        <span class="hero-card__link">Pogledaj cijene →</span>
+      </div>
+    </a>
+
+    <a href="#cjenovnik" class="hero-card" aria-label="Obrve usluge">
+      <div class="hero-card__bg" style="background-image: url('images/Nails 4.jpg');"></div>
+      <div class="hero-card__overlay"></div>
+      <div class="hero-card__content">
+        <h2 class="hero-card__title">Obrve</h2>
+        <p class="hero-card__sub">Brow lift, oblikovanje i bojanje</p>
+        <span class="hero-card__link">Pogledaj cijene →</span>
+      </div>
+    </a>
+
+  </div>
 
   <hr class="gold-rule" />
 
@@ -151,6 +197,61 @@
           </div>
 
         </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-rule" />
+
+  <!-- ============================================================
+       ZAŠTO NAS IZABRATI? (Why Us) — numbered benefit cards
+       ============================================================ -->
+  <section class="why-us section-pad" id="zasto-nas" aria-labelledby="why-title">
+    <div class="container">
+
+      <div class="why-us__intro fade-in">
+        <p class="why-us__eyebrow">Naša prednost</p>
+        <h2 class="section-title centered" id="why-title">Zašto nas izabrati?</h2>
+      </div>
+
+      <div class="why-us__grid">
+
+        <div class="why-card fade-in">
+          <span class="why-card__num">01</span>
+          <h3 class="why-card__title">Profesionalni tim</h3>
+          <p class="why-card__text">Certificirane majstorice sa višegodišnjim iskustvom i kontinuiranom edukacijom.</p>
+        </div>
+
+        <div class="why-card fade-in">
+          <span class="why-card__num">02</span>
+          <h3 class="why-card__title">Sterilizovan pribor</h3>
+          <p class="why-card__text">Sav pribor se sterilizuje nakon svakog klijenta za vašu potpunu sigurnost.</p>
+        </div>
+
+        <div class="why-card fade-in">
+          <span class="why-card__num">03</span>
+          <h3 class="why-card__title">Premium materijali</h3>
+          <p class="why-card__text">Koristimo samo vrhunske brendove i materijale koji čuvaju zdravlje vaših noktiju.</p>
+        </div>
+
+        <div class="why-card fade-in">
+          <span class="why-card__num">04</span>
+          <h3 class="why-card__title">Personalizovan pristup</h3>
+          <p class="why-card__text">Svaki tretman prilagođavamo vašim željama, potrebama i stilu života.</p>
+        </div>
+
+        <div class="why-card fade-in">
+          <span class="why-card__num">05</span>
+          <h3 class="why-card__title">Ugodna atmosfera</h3>
+          <p class="why-card__text">Opustite se u našem elegantnom, mirnom ambijentu koji je stvoren za vas.</p>
+        </div>
+
+        <div class="why-card fade-in">
+          <span class="why-card__num">06</span>
+          <h3 class="why-card__title">Povoljne cijene</h3>
+          <p class="why-card__text">Kvalitet bez kompromisa po pristupačnim cijenama — jer svaka žena to zaslužuje.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -376,62 +477,97 @@
   <hr class="gold-rule" />
 
   <!-- ============================================================
-       6. GALERIJA
+       6. ZAJEDNICA (Community / Gallery — p-de-p style)
        ============================================================ -->
   <section class="gallery section-pad" id="galerija" aria-labelledby="gallery-title">
     <div class="container">
 
-      <div class="gallery__intro fade-in">
-        <h2 class="section-title centered" id="gallery-title">Galerija</h2>
-        <p style="text-align:center; color:#6a6a6a; font-weight:300; margin-top:0.75rem;">
-          Pogledajte naše radove
+      <!-- Community heading — p-de-p inspired: caps, wide tracking -->
+      <div class="community__intro fade-in">
+        <p class="community__eyebrow">Instagram</p>
+        <h2 class="community__title" id="gallery-title">ZAJEDNICA</h2>
+        <p class="community__subtitle">
+          Pratite nas na Instagramu i budite dio naše zajednice ljepote.
         </p>
-      </div>
-
-      <!-- Masonry grid sa 9 slika -->
-      <div class="gallery__grid fade-in" role="list" aria-label="Galerija naših radova">
-
-        <div class="gallery__item" role="listitem">
-          <img src="images/gallery/1.jpg" alt="Galerija rad 1 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="gallery__item" role="listitem">
-          <img src="images/gallery/2.jpg" alt="Galerija rad 2 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="gallery__item" role="listitem">
-          <img src="images/gallery/3.jpg" alt="Galerija rad 3 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="gallery__item" role="listitem">
-          <img src="images/gallery/4.jpg" alt="Galerija rad 4 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="gallery__item" role="listitem">
-          <img src="images/gallery/5.jpg" alt="Galerija rad 5 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="gallery__item" role="listitem">
-          <img src="images/gallery/6.jpg" alt="Galerija rad 6 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="gallery__item" role="listitem">
-          <img src="images/gallery/7.jpg" alt="Galerija rad 7 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="gallery__item" role="listitem">
-          <img src="images/gallery/8.jpg" alt="Galerija rad 8 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-        <div class="gallery__item" role="listitem">
-          <img src="images/gallery/9.jpg" alt="Galerija rad 9 — Studio Ljepote Selma" loading="lazy" onerror="this.style.display='none'" />
-        </div>
-
-      </div>
-
-      <!-- Instagram CTA -->
-      <div class="gallery__cta fade-in">
-        <p>Pratite nas za dnevne inspiracije i radove</p>
         <a
           href="https://www.instagram.com/studioljepote_selma/"
-          class="btn btn-outline-dark"
+          class="community__handle"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Posjetite Instagram profil Studio Ljepote Selma"
+          aria-label="Posjetite Instagram profil"
+        >@studioljepote_selma</a>
+      </div>
+
+      <!--
+        Za dodavanje videa: postavite src="images/vid1.mp4" na svaki <video> element.
+        Podržani formati: .mp4 (H.264), .webm
+        Preporučena rezolucija: 1080×1920 (9:16 vertikalno)
+      -->
+      <div class="story-carousel fade-in" role="list" aria-label="Galerija naših radova">
+
+        <div class="story-item" role="listitem">
+          <video class="story-video" poster="images/Nails 1.jpg"
+            src="" muted loop playsinline preload="none"
+            aria-label="Manikir rad 1"></video>
+        </div>
+        <div class="story-item" role="listitem">
+          <video class="story-video" poster="images/Nails 2.jpg"
+            src="" muted loop playsinline preload="none"
+            aria-label="Manikir rad 2"></video>
+        </div>
+        <div class="story-item" role="listitem">
+          <video class="story-video" poster="images/Nails 3.jpg"
+            src="" muted loop playsinline preload="none"
+            aria-label="Manikir rad 3"></video>
+        </div>
+        <div class="story-item" role="listitem">
+          <video class="story-video" poster="images/Nails 4.jpg"
+            src="" muted loop playsinline preload="none"
+            aria-label="Manikir rad 4"></video>
+        </div>
+        <div class="story-item" role="listitem">
+          <video class="story-video" poster="images/Nails 5.jpg"
+            src="" muted loop playsinline preload="none"
+            aria-label="Manikir rad 5"></video>
+        </div>
+        <div class="story-item" role="listitem">
+          <video class="story-video" poster="images/Nails 6.jpg"
+            src="" muted loop playsinline preload="none"
+            aria-label="Manikir rad 6"></video>
+        </div>
+        <div class="story-item" role="listitem">
+          <video class="story-video" poster="images/Nails 7.jpg"
+            src="" muted loop playsinline preload="none"
+            aria-label="Manikir rad 7"></video>
+        </div>
+        <div class="story-item" role="listitem">
+          <video class="story-video" poster="images/Nails 8.jpg"
+            src="" muted loop playsinline preload="none"
+            aria-label="Manikir rad 8"></video>
+        </div>
+        <div class="story-item" role="listitem">
+          <video class="story-video" poster="images/Nails 9.jpg"
+            src="" muted loop playsinline preload="none"
+            aria-label="Manikir rad 9"></video>
+        </div>
+        <div class="story-item" role="listitem">
+          <video class="story-video" poster="images/Nails 10.jpg"
+            src="" muted loop playsinline preload="none"
+            aria-label="Manikir rad 10"></video>
+        </div>
+
+      </div>
+
+      <!-- Prominentni Instagram CTA -->
+      <div class="community__cta fade-in">
+        <a
+          href="https://www.instagram.com/studioljepote_selma/"
+          class="btn btn-rose community__cta-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Pratite Studio Ljepote Selma na Instagramu"
         >
-          Pratite nas @studioljepote_selma ↗
+          Pratite nas na Instagramu ↗
         </a>
       </div>
 
@@ -630,7 +766,7 @@
   <footer class="footer" role="contentinfo">
 
     <a href="#hero" class="footer__logo" aria-label="Studio Ljepote Selma — povratak na vrh">
-      Studio Ljepote Selma
+      <img src="images/SLJS Logo.png" alt="Studio Ljepote Selma" class="footer__logo-img" />
     </a>
 
     <!-- Instagram link u footeru -->
@@ -638,7 +774,7 @@
       <a
         href="https://www.instagram.com/studioljepote_selma/"
         class="footer__ig-link"
-        target="_blank"
+        target="_blank" 
         rel="noopener noreferrer"
         aria-label="Posjetite naš Instagram profil"
       >
@@ -752,6 +888,21 @@
         el.classList.add('visible');
       });
     }
+
+    /* ----------------------------------------------------------
+       5. STORY CAROUSEL — video play on hover
+       ---------------------------------------------------------- */
+    document.querySelectorAll('.story-video').forEach(function (video) {
+      video.addEventListener('mouseenter', function () {
+        if (video.src && video.src !== window.location.href) {
+          video.play().catch(function () {});
+        }
+      });
+      video.addEventListener('mouseleave', function () {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
   </script>
 
 </body>
