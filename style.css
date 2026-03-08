@@ -909,16 +909,12 @@ ul {
   display: flex;
   gap: 0.75rem;
   width: max-content;
-  animation: story-scroll 42s linear infinite;
+  animation: story-scroll 140s linear infinite;
 }
 
 /* Row 2: scrolls in opposite direction */
 .story-track--reverse {
   animation-direction: reverse;
-}
-
-.story-carousel:hover .story-track {
-  animation-play-state: paused;
 }
 
 @keyframes story-scroll {
