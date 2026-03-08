@@ -312,49 +312,103 @@
 
       <div class="services__intro fade-in">
         <h2 class="section-title centered" id="services-title">Naše Usluge</h2>
-        <p>Nudimo širok spektar beauty tretmana prilagođenih svakom tipu klijentica — od svakodnevnog njege do glamuroznih transformacija.</p>
+        <div class="services__rule" aria-hidden="true"></div>
+        <p class="services__subtitle">Odaberite tretman koji vam odgovara i zakažite termin danas.</p>
+        <p class="services__note">Sve usluge dostupne uz prethodni dogovor</p>
       </div>
 
-      <div class="services__grid">
+      <div class="services__list">
 
-        <!-- Kartica 1: Manikir -->
-        <div class="service-card fade-in">
-          <span class="service-card__icon" aria-hidden="true">✦</span>
-          <h3 class="service-card__title">Manikir</h3>
-          <p class="service-card__desc">
-            Ruski manikir, gel, trajni lak, rubber baza, izlivanje noktiju — preciznost i kvalitet u svakom detalju.
-          </p>
-          <a href="#cjenovnik" class="service-card__link" aria-label="Pogledaj cijene za manikir">Pogledaj cijene →</a>
+        <!-- Kartica 1: Manikir — panel lijevo -->
+        <div class="svc-card fade-in" style="--delay:0ms">
+          <div class="svc-card__panel svc-card__panel--manikir">
+            <span class="svc-card__num" aria-hidden="true">01</span>
+            <h3 class="svc-card__panel-name">Manikir</h3>
+          </div>
+          <div class="svc-card__body">
+            <span class="svc-card__icon" aria-hidden="true">✦</span>
+            <h3 class="svc-card__title">Manikir</h3>
+            <p class="svc-card__desc">Ruski manikir, gel, trajni lak, rubber baza, izlivanje noktiju — preciznost i kvalitet u svakom detalju.</p>
+            <ul class="svc-card__list" aria-label="Uključeni tretmani">
+              <li>Ruski manikir</li>
+              <li>Gel nokti</li>
+              <li>Trajni lak</li>
+            </ul>
+            <p class="svc-card__price">od <strong>20 KM</strong></p>
+            <div class="svc-card__actions">
+              <a href="#cjenovnik"  class="svc-btn svc-btn--outline" aria-label="Pogledaj cijene za manikir">Pogledaj cijene</a>
+              <a href="#rezervacija" class="svc-btn svc-btn--filled"  aria-label="Zakaži termin za manikir">Zakaži termin</a>
+            </div>
+          </div>
         </div>
 
-        <!-- Kartica 2: Makeup -->
-        <div class="service-card fade-in">
-          <span class="service-card__icon" aria-hidden="true">✦</span>
-          <h3 class="service-card__title">Makeup</h3>
-          <p class="service-card__desc">
-            Dnevni i Glam makeup po mjeri — naglašavamo vaš prirodni sjaj ili stvaramo dramatičan, upečatljiv look.
-          </p>
-          <a href="#cjenovnik" class="service-card__link" aria-label="Pogledaj cijene za makeup">Pogledaj cijene →</a>
+        <!-- Kartica 2: Makeup — panel desno (mirror) -->
+        <div class="svc-card svc-card--reverse fade-in" style="--delay:150ms">
+          <div class="svc-card__panel svc-card__panel--makeup">
+            <span class="svc-card__num" aria-hidden="true">02</span>
+            <h3 class="svc-card__panel-name">Makeup</h3>
+          </div>
+          <div class="svc-card__body">
+            <span class="svc-card__icon" aria-hidden="true">✦</span>
+            <h3 class="svc-card__title">Makeup</h3>
+            <p class="svc-card__desc">Dnevni i Glam makeup po mjeri — naglašavamo vaš prirodni sjaj ili stvaramo dramatičan, upečatljiv look.</p>
+            <ul class="svc-card__list" aria-label="Uključeni tretmani">
+              <li>Dnevni makeup</li>
+              <li>Glam makeup</li>
+              <li>Brow styling</li>
+            </ul>
+            <p class="svc-card__price">od <strong>35 KM</strong></p>
+            <div class="svc-card__actions">
+              <a href="#cjenovnik"  class="svc-btn svc-btn--outline" aria-label="Pogledaj cijene za makeup">Pogledaj cijene</a>
+              <a href="#rezervacija" class="svc-btn svc-btn--filled"  aria-label="Zakaži termin za makeup">Zakaži termin</a>
+            </div>
+          </div>
         </div>
 
-        <!-- Kartica 3: Trepavice -->
-        <div class="service-card fade-in">
-          <span class="service-card__icon" aria-hidden="true">✦</span>
-          <h3 class="service-card__title">Trepavice</h3>
-          <p class="service-card__desc">
-            Nadogradnja svilenih trepavica tehnikom 1:1, lash lift — dugi, gustih, prirodni ili dramatični efekt.
-          </p>
-          <a href="#cjenovnik" class="service-card__link" aria-label="Pogledaj cijene za trepavice">Pogledaj cijene →</a>
+        <!-- Kartica 3: Trepavice — panel lijevo -->
+        <div class="svc-card fade-in" style="--delay:300ms">
+          <div class="svc-card__panel svc-card__panel--trepavice">
+            <span class="svc-card__num" aria-hidden="true">03</span>
+            <h3 class="svc-card__panel-name">Trepavice</h3>
+          </div>
+          <div class="svc-card__body">
+            <span class="svc-card__icon" aria-hidden="true">✦</span>
+            <h3 class="svc-card__title">Trepavice</h3>
+            <p class="svc-card__desc">Nadogradnja svilenih trepavica tehnikom 1:1, lash lift — dugi, gusti, prirodni ili dramatični efekt.</p>
+            <ul class="svc-card__list" aria-label="Uključeni tretmani">
+              <li>Tehnika 1:1</li>
+              <li>Lash lift</li>
+              <li>Korekcija</li>
+            </ul>
+            <p class="svc-card__price">od <strong>10 KM</strong></p>
+            <div class="svc-card__actions">
+              <a href="#cjenovnik"  class="svc-btn svc-btn--outline" aria-label="Pogledaj cijene za trepavice">Pogledaj cijene</a>
+              <a href="#rezervacija" class="svc-btn svc-btn--filled"  aria-label="Zakaži termin za trepavice">Zakaži termin</a>
+            </div>
+          </div>
         </div>
 
-        <!-- Kartica 4: Obrve -->
-        <div class="service-card fade-in">
-          <span class="service-card__icon" aria-hidden="true">✦</span>
-          <h3 class="service-card__title">Obrve</h3>
-          <p class="service-card__desc">
-            Brow lift, oblikovanje i bojanje — definišemo i uokvirujemo vaš pogled za savršeno lice.
-          </p>
-          <a href="#cjenovnik" class="service-card__link" aria-label="Pogledaj cijene za obrve">Pogledaj cijene →</a>
+        <!-- Kartica 4: Obrve — panel desno (mirror) -->
+        <div class="svc-card svc-card--reverse fade-in" style="--delay:450ms">
+          <div class="svc-card__panel svc-card__panel--obrve">
+            <span class="svc-card__num" aria-hidden="true">04</span>
+            <h3 class="svc-card__panel-name">Obrve</h3>
+          </div>
+          <div class="svc-card__body">
+            <span class="svc-card__icon" aria-hidden="true">✦</span>
+            <h3 class="svc-card__title">Obrve</h3>
+            <p class="svc-card__desc">Brow lift, oblikovanje i bojanje — definišemo i uokvirujemo vaš pogled za savršeno lice.</p>
+            <ul class="svc-card__list" aria-label="Uključeni tretmani">
+              <li>Brow lift</li>
+              <li>Oblikovanje</li>
+              <li>Bojanje</li>
+            </ul>
+            <p class="svc-card__price">od <strong>35 KM</strong></p>
+            <div class="svc-card__actions">
+              <a href="#cjenovnik"  class="svc-btn svc-btn--outline" aria-label="Pogledaj cijene za obrve">Pogledaj cijene</a>
+              <a href="#rezervacija" class="svc-btn svc-btn--filled"  aria-label="Zakaži termin za obrve">Zakaži termin</a>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -513,7 +567,7 @@
         <!-- Napomena ispod tabova -->
         <p class="pricing__note">
           Cijene su okvirne. Za više informacija kontaktirajte nas na
-          <a href="tel:+38761375214">+387 61 375 214</a>.
+          <a href="tel:+38761375214">Viber ili WhatsApp</a>.
         </p>
 
       </div><!-- .tabs -->
