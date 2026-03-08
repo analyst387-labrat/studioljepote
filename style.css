@@ -1152,75 +1152,114 @@ ul {
    8. KONTAKT + MAPA
    ============================================================ */
 .contact {
-  background: var(--bg);
+  background: #F5EDE8;
 }
 
 .contact__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
+  gap: 64px;
+  align-items: stretch;
 }
 
-.contact__info .section-title {
-  margin-bottom: 2rem;
-}
-
-.contact__list {
+/* Left column — flex column so list stretches to map height */
+.contact__info {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
 }
 
-.contact__item {
+/* Section header */
+.contact__eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #C9A96E;
+  font-family: var(--font-sans);
+  margin-bottom: 10px;
+}
+
+.contact__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  color: #2C2C2C;
+  margin-bottom: 12px;
+}
+
+.contact__rule {
+  width: 48px;
+  height: 2px;
+  background: #C9A96E;
+  margin-bottom: 40px;
+}
+
+/* Contact list — flex:1 to fill remaining height */
+.contact__list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Individual contact item */
+.contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(201,169,110,0.15);
 }
 
-.contact__item-icon {
-  font-size: 1.2rem;
+.contact-item:first-child {
+  border-top: 1px solid rgba(201,169,110,0.15);
+}
+
+.contact-icon {
   flex-shrink: 0;
-  margin-top: 0.1rem;
+  width: 20px;
+  margin-top: 3px;
 }
 
-.contact__item-text {
-  font-size: var(--font-body);
-  font-weight: 300;
-  line-height: 1.7;
-}
-
-.contact__item-text strong {
+.contact-label {
   display: block;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-size: 0.68rem;
   text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: #C9A96E;
-  margin-bottom: 0.2rem;
+  margin-bottom: 4px;
 }
 
-.contact__item-text a {
-  color: #C9847A;
+.contact-value {
+  display: block;
+  font-size: 0.95rem;
+  color: #2C2C2C;
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+.contact-value a {
+  color: #2C2C2C;
+  text-decoration: none;
   transition: color var(--transition);
 }
 
-.contact__item-text a:hover {
-  color: var(--rose);
+.contact-value a:hover {
+  color: #C9847A;
 }
 
-/* Google Maps iframe */
+/* Google Maps iframe container */
 .contact__map {
-  border-radius: var(--radius);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: var(--shadow);
-  height: 400px;
+  min-height: 420px;
+  height: 100%;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.09);
 }
 
 .contact__map iframe {
   width: 100%;
   height: 100%;
-  border: none;
+  border: 0;
   display: block;
 }
 
@@ -1376,6 +1415,10 @@ ul {
     gap: 2.5rem;
   }
 
+  .contact__map {
+    min-height: 320px;
+    height: 320px;
+  }
 
 }
 
@@ -1477,5 +1520,14 @@ ul {
 
   .about__detail {
     gap: 0.5rem;
+  }
+
+  .contact__map {
+    min-height: 260px;
+    height: 260px;
+  }
+
+  .contact-item {
+    padding: 16px 0;
   }
 }
