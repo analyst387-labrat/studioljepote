@@ -1021,11 +1021,18 @@
     }
 
     /* ----------------------------------------------------------
-       5. STORY CAROUSEL — video play on hover
+       5. STORY CAROUSEL — show first frame at rest, play on hover
        ---------------------------------------------------------- */
     document.querySelectorAll('.story-video').forEach(function (video) {
+      // For actual video files: load metadata so the browser renders
+      // the first frame as a thumbnail without fetching the full file.
+      if (video.getAttribute('src')) {
+        video.preload = 'metadata';
+        video.load();
+      }
+
       video.addEventListener('mouseenter', function () {
-        if (video.src && video.src !== window.location.href) {
+        if (video.getAttribute('src')) {
           video.play().catch(function () {});
         }
       });
