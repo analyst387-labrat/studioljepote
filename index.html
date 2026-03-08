@@ -3,11 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Studio Ljepote Selma — profesionalni beauty studio u Sarajevu. Manikir, makeup, trepavice, obrve. Čengić Vila, Džemala Bijedića 48." />
-  <meta property="og:title" content="Studio Ljepote Selma" />
-  <meta property="og:description" content="Tvoja ljepota, naša strast. Studio ljepote u srcu Sarajeva." />
-  <meta property="og:type" content="website" />
-  <title>Studio Ljepote Selma</title>
+
+  <!-- SEO: naslov i opis -->
+  <title>Studio Ljepote Selma | Manikir, Makeup, Trepavice — Sarajevo</title>
+  <meta name="description" content="Studio ljepote u Čengić Vili, Sarajevo. Manikir, gel nokti, makeup, nadogradnja trepavica, lash lift i brow lift. Džemala Bijedića 48. Pozovite +387 61 375 214." />
+  <link rel="canonical" href="https://studioljepoteselma.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://studioljepoteselma.com" />
+  <meta property="og:title"       content="Studio Ljepote Selma | Manikir, Makeup, Trepavice — Sarajevo" />
+  <meta property="og:description" content="Studio ljepote u Čengić Vili, Sarajevo. Manikir, gel nokti, makeup, nadogradnja trepavica, lash lift i brow lift. Džemala Bijedića 48." />
+  <meta property="og:image"       content="https://studioljepoteselma.com/images/SLJS Logo.png" />
+  <meta property="og:locale"      content="bs_BA" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Studio Ljepote Selma | Manikir, Makeup, Trepavice — Sarajevo" />
+  <meta name="twitter:description" content="Studio ljepote u Čengić Vili, Sarajevo. Manikir, gel nokti, makeup, nadogradnja trepavica, lash lift i brow lift." />
+  <meta name="twitter:image"       content="https://studioljepoteselma.com/images/SLJS Logo.png" />
+
+  <!-- Schema.org — BeautySalon strukturirani podaci -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Studio Ljepote Selma",
+    "description": "Studio ljepote u Čengić Vili, Sarajevo. Manikir, gel nokti, makeup, nadogradnja trepavica, lash lift i brow lift.",
+    "url": "https://studioljepoteselma.com",
+    "telephone": "+38761375214",
+    "image": "https://studioljepoteselma.com/images/SLJS Logo.png",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Džemala Bijedića 48",
+      "addressLocality": "Sarajevo",
+      "addressRegion": "Čengić Vila",
+      "addressCountry": "BA"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/studioljepote_selma/"
+    ]
+  }
+  </script>
 
   <!-- Google Fonts: Cormorant Garamond (elegantni serif) + Jost (clean sans-serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,7 +91,7 @@
 
       <!-- Logo -->
       <a href="#hero" class="nav__logo" aria-label="Studio Ljepote Selma — početna">
-        <img src="images/SLJS Logo.png" alt="Studio Ljepote Selma" class="nav__logo-img" />
+        <img src="images/SLJS Logo.png" alt="Studio Ljepote Selma — beauty studio Sarajevo" class="nav__logo-img" />
       </a>
 
       <!-- Desktop navigacijski linkovi + CTA -->
@@ -86,7 +132,7 @@
     <div class="hero-header__inner">
       <img
         src="images/SLJS Logo.png"
-        alt="Studio Ljepote Selma"
+        alt="Studio Ljepote Selma — beauty studio Sarajevo, Čengić Vila"
         class="hero-logo"
       />
       <h1 class="hero-title">Tvoja ljepota, naša strast.</h1>
@@ -644,10 +690,9 @@
         <div class="booking__divider" aria-hidden="true">ili</div>
 
         <!-- Kontakt forma -->
-        <!-- Zamijeni PLACEHOLDER sa tvojim Formspree ID-om: https://formspree.io/f/YOUR_ID -->
         <form
           class="booking__form"
-          action="https://formspree.io/f/PLACEHOLDER"
+          action="https://formspree.io/f/mgonvdan"
           method="POST"
           aria-label="Forma za zakazivanje termina"
         >
@@ -802,7 +847,7 @@
   <footer class="footer" role="contentinfo">
 
     <a href="#hero" class="footer__logo" aria-label="Studio Ljepote Selma — povratak na vrh">
-      <img src="images/SLJS Logo.png" alt="Studio Ljepote Selma" class="footer__logo-img" />
+      <img src="images/SLJS Logo.png" alt="Studio Ljepote Selma — beauty studio Sarajevo" class="footer__logo-img" />
     </a>
 
     <!-- Instagram link u footeru -->
