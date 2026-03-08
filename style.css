@@ -233,6 +233,8 @@ ul {
   width: auto;
   object-fit: contain;
   display: block;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 /* Desktop navigation linkovi */
@@ -813,26 +815,37 @@ ul {
   margin-bottom: 3rem;
 }
 
-/* Horizontal scrollable story carousel */
+/* Full-width auto-scrolling story carousel */
 .story-carousel {
+  overflow: hidden;
+  width: 100%;
+  padding: 1rem 0 2rem;
+}
+
+/* Scrolling track — duplicated items for seamless infinite loop */
+.story-track {
   display: flex;
   gap: 0.75rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 0.5rem 0 1.5rem;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  width: max-content;
+  animation: story-scroll 38s linear infinite;
 }
-.story-carousel::-webkit-scrollbar { display: none; }
+
+.story-carousel:hover .story-track {
+  animation-play-state: paused;
+}
+
+@keyframes story-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 
 /* Each story card — portrait 9:16, like Instagram Stories */
 .story-item {
   flex: 0 0 auto;
-  width: clamp(160px, 22vw, 260px);
+  width: clamp(140px, 18vw, 220px);
   aspect-ratio: 9 / 16;
   border-radius: 14px;
   overflow: hidden;
-  scroll-snap-align: start;
   background: linear-gradient(160deg, #e8d0cb, #f0e4d0);
   position: relative;
   cursor: pointer;
@@ -863,7 +876,7 @@ ul {
   pointer-events: none;
 }
 .story-item:hover::after {
-  background: rgba(201,132,122,0.12);
+  background: rgba(201,132,122,0.15);
 }
 
 /* Community / Zajednica heading (p-de-p inspired) */
@@ -947,25 +960,25 @@ ul {
   line-height: 1.7;
 }
 
-/* WhatsApp CTA dugme */
-.btn-whatsapp {
+/* Viber CTA dugme */
+.btn-viber {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: #25D366;
+  background: #7360F2;
   color: var(--white);
   padding: 1rem 2.5rem;
   border-radius: 2rem;
   font-size: 1rem;
   font-weight: 500;
   transition: all var(--transition);
-  box-shadow: 0 6px 24px rgba(37,211,102,0.3);
+  box-shadow: 0 6px 24px rgba(115,96,242,0.3);
 }
 
-.btn-whatsapp:hover {
-  background: #1ebe5d;
+.btn-viber:hover {
+  background: #5e4dd6;
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(37,211,102,0.4);
+  box-shadow: 0 10px 30px rgba(115,96,242,0.45);
 }
 
 .booking__divider {
@@ -1177,32 +1190,37 @@ ul {
 }
 
 /* ============================================================
-   LEBDEĆE WHATSAPP DUGME (uvijek vidljivo)
+   LEBDEĆE VIBER DUGME (uvijek vidljivo)
    ============================================================ */
-.whatsapp-float {
+@keyframes viber-pulse {
+  0%, 100% { transform: scale(1);    box-shadow: 0 6px 24px rgba(115,96,242,0.5); }
+  50%       { transform: scale(1.1); box-shadow: 0 14px 38px rgba(115,96,242,0.72); }
+}
+
+.viber-float {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
   z-index: 999;
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
-  background: #25D366;
+  background: #7360F2;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 24px rgba(37,211,102,0.45);
-  transition: all var(--transition);
+  animation: viber-pulse 2.2s ease-in-out infinite;
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 32px rgba(37,211,102,0.55);
+.viber-float:hover {
+  animation: none;
+  transform: scale(1.15);
+  box-shadow: 0 14px 38px rgba(115,96,242,0.75);
 }
 
-.whatsapp-float svg {
-  width: 28px;
-  height: 28px;
+.viber-float svg {
+  width: 30px;
+  height: 30px;
   fill: var(--white);
 }
 
