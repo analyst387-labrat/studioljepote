@@ -15,6 +15,13 @@
   --transition: 0.3s ease;
   --radius: 4px;
   --shadow: 0 4px 24px rgba(44,44,44,0.08);
+  /* Fluid typography */
+  --font-hero:  clamp(2.2rem, 6vw, 4rem);
+  --font-h2:    clamp(1.6rem, 3.5vw, 2.4rem);
+  --font-h3:    clamp(1.1rem, 2.5vw, 1.4rem);
+  --font-body:  clamp(0.9rem, 1.5vw, 1rem);
+  --font-small: 0.85rem;
+  --font-label: 0.75rem;
 }
 
 /* ============================================================
@@ -61,13 +68,13 @@ ul {
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 24px;
 }
 
 /* Naslovi sekcija */
 .section-title {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: var(--font-h2);
   font-weight: 400;
   color: var(--charcoal);
   margin-bottom: 0.5rem;
@@ -95,7 +102,7 @@ ul {
 
 /* Padding za sekcije */
 .section-pad {
-  padding: 5rem 0;
+  padding: 88px 0;
 }
 
 /* Zlatni horizontalni separator između sekcija */
@@ -247,7 +254,7 @@ ul {
 .nav__links a {
   font-size: 0.875rem;
   font-weight: 400;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.03em;
   color: var(--charcoal);
   text-transform: uppercase;
   position: relative;
@@ -279,6 +286,10 @@ ul {
   cursor: pointer;
   padding: 4px;
   z-index: 110;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav__hamburger span {
@@ -328,7 +339,7 @@ ul {
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-size: var(--font-hero);
   font-weight: 300;
   font-style: italic;
   line-height: 1.15;
@@ -337,11 +348,18 @@ ul {
 }
 
 .hero-subtitle {
-  font-size: 0.95rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   font-weight: 300;
-  color: #888;
+  color: #6b6b6b;
   margin-bottom: 2rem;
   letter-spacing: 0.03em;
+}
+
+/* Hero CTA buttons — prominent sizing */
+.hero-header__buttons .btn {
+  min-height: 52px;
+  padding: 14px 32px;
+  font-size: 0.9rem;
 }
 
 .hero-header__buttons {
@@ -488,20 +506,21 @@ ul {
 }
 
 .about__subtitle {
-  font-size: 0.8rem;
+  font-size: var(--font-label);
   font-weight: 400;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--rose);
+  color: #C9A96E;
   margin-bottom: 1rem;
 }
 
 .about__body {
-  font-size: 1.05rem;
+  font-size: var(--font-body);
   font-weight: 300;
-  line-height: 1.85;
+  line-height: 1.8;
   color: #4a4a4a;
   margin-top: 1.5rem;
+  max-width: 560px;
 }
 
 .about__detail {
@@ -520,16 +539,16 @@ ul {
 
 .about__detail-num {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
   font-weight: 300;
-  color: var(--rose);
+  color: #C9847A;
 }
 
 .about__detail-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #888;
+  color: #6b6b6b;
 }
 
 /* ============================================================
@@ -545,11 +564,11 @@ ul {
 }
 
 .why-us__eyebrow {
-  font-size: 0.75rem;
+  font-size: var(--font-label);
   font-weight: 400;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--rose);
+  color: var(--gold);
   margin-bottom: 0.6rem;
 }
 
@@ -567,27 +586,26 @@ ul {
 
 .why-card__num {
   font-family: var(--font-serif);
-  font-size: 2.8rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 300;
-  color: var(--gold);
+  color: rgba(201,132,122,0.3);
   line-height: 1;
   display: block;
   margin-bottom: 0.75rem;
-  opacity: 0.7;
 }
 
 .why-card__title {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: var(--font-h3);
   font-weight: 400;
   margin-bottom: 0.5rem;
   color: var(--charcoal);
 }
 
 .why-card__text {
-  font-size: 0.875rem;
+  font-size: var(--font-body);
   font-weight: 300;
-  color: #6a6a6a;
+  color: #6b6b6b;
   line-height: 1.7;
 }
 
@@ -723,7 +741,13 @@ ul {
   gap: 0;
   border-bottom: 1px solid rgba(201,169,110,0.3);
   margin-bottom: 2.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+
+.tab-nav::-webkit-scrollbar { display: none; }
 
 .tab-btn {
   background: none;
@@ -734,11 +758,12 @@ ul {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #999;
-  padding: 0.75rem 2rem;
+  padding: 12px 24px;
   cursor: pointer;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
   transition: all var(--transition);
+  flex-shrink: 0;
 }
 
 .tab-btn:hover {
@@ -766,14 +791,18 @@ ul {
 
 .price-category__title {
   font-family: var(--font-serif);
-  font-size: 1rem;
+  font-size: var(--font-h3);
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--rose);
   margin-bottom: 0.75rem;
+  margin-top: 32px;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(201,132,122,0.2);
+}
+
+.price-category:first-child .price-category__title {
+  margin-top: 0;
 }
 
 /* Red cijena — naziv lijevo, cijena desno */
@@ -791,29 +820,66 @@ ul {
 }
 
 .price-row__name {
-  font-size: 0.95rem;
+  font-size: var(--font-body);
   font-weight: 300;
+  color: #2C2C2C;
 }
 
 .price-row__price {
-  font-family: var(--font-serif);
-  font-size: 1.05rem;
-  font-weight: 400;
-  color: var(--charcoal);
+  font-size: var(--font-body);
+  font-weight: 500;
+  color: #C9847A;
   white-space: nowrap;
 }
 
 .pricing__note {
   margin-top: 2.5rem;
   text-align: center;
-  font-size: 0.85rem;
-  color: #888;
+  font-size: var(--font-small);
+  color: #6b6b6b;
   font-style: italic;
 }
 
 .pricing__note a {
   color: var(--rose);
   text-decoration: underline;
+}
+
+/* Pricing CTA block */
+.pricing__cta {
+  margin-top: 40px;
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid rgba(201,169,110,0.2);
+}
+
+.pricing__cta-prompt {
+  font-size: 0.85rem;
+  color: #6b6b6b;
+  margin-bottom: 12px;
+}
+
+.pricing__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #C9847A;
+  color: white;
+  padding: 14px 40px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  min-height: 52px;
+  min-width: 200px;
+  margin: 16px auto 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(201,132,122,0.3);
+}
+
+.pricing__cta-btn:hover {
+  background: #b8736a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201,132,122,0.4);
 }
 
 /* ============================================================
@@ -828,11 +894,14 @@ ul {
   margin-bottom: 3rem;
 }
 
-/* Full-width auto-scrolling story carousel */
+/* Full-width auto-scrolling story carousel — two rows */
 .story-carousel {
   overflow: hidden;
   width: 100%;
   padding: 1rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 /* Scrolling track — duplicated items for seamless infinite loop */
@@ -840,7 +909,12 @@ ul {
   display: flex;
   gap: 0.75rem;
   width: max-content;
-  animation: story-scroll 38s linear infinite;
+  animation: story-scroll 42s linear infinite;
+}
+
+/* Row 2: scrolls in opposite direction */
+.story-track--reverse {
+  animation-direction: reverse;
 }
 
 .story-carousel:hover .story-track {
@@ -909,7 +983,7 @@ ul {
 
 .community__title {
   font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-size: var(--font-h2);
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -966,9 +1040,9 @@ ul {
 }
 
 .booking__subtitle {
-  font-size: 1.05rem;
+  font-size: var(--font-body);
   font-weight: 300;
-  color: #6a6a6a;
+  color: #6b6b6b;
   margin: 1.2rem 0 2.5rem;
   line-height: 1.7;
 }
@@ -1036,15 +1110,15 @@ ul {
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 0.85rem 1rem;
-  border: 1px solid rgba(44,44,44,0.15);
-  border-radius: var(--radius);
+  padding: 14px 16px;
+  border: 1px solid rgba(201,132,122,0.3);
+  border-radius: 8px;
   background: var(--white);
   font-family: var(--font-sans);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 300;
-  color: var(--charcoal);
-  transition: border-color var(--transition);
+  color: #2C2C2C;
+  transition: border-color var(--transition), box-shadow var(--transition);
   outline: none;
   -webkit-appearance: none;
   appearance: none;
@@ -1061,8 +1135,9 @@ ul {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: var(--rose);
-  box-shadow: 0 0 0 3px rgba(201,132,122,0.12);
+  border-color: #C9847A;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201,132,122,0.15);
 }
 
 .form-group textarea {
@@ -1073,6 +1148,8 @@ ul {
 .form-submit {
   width: 100%;
   margin-top: 0.5rem;
+  min-height: 52px;
+  font-size: 1rem;
 }
 
 /* ============================================================
@@ -1112,23 +1189,23 @@ ul {
 }
 
 .contact__item-text {
-  font-size: 0.95rem;
+  font-size: var(--font-body);
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .contact__item-text strong {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #888;
+  color: #C9A96E;
   margin-bottom: 0.2rem;
 }
 
 .contact__item-text a {
-  color: var(--charcoal);
+  color: #C9847A;
   transition: color var(--transition);
 }
 
@@ -1189,7 +1266,10 @@ ul {
   font-size: 0.85rem;
   font-weight: 400;
   letter-spacing: 0.06em;
-  transition: color var(--transition);
+  padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  transition: all var(--transition);
 }
 
 .footer__ig-link:hover {
@@ -1197,8 +1277,8 @@ ul {
 }
 
 .footer__copy {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.4);
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
   margin-top: 0.5rem;
 }
 
@@ -1212,17 +1292,40 @@ ul {
 
 .viber-float {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  z-index: 999;
-  width: 58px;
-  height: 58px;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: #7360F2;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: viber-pulse 2.2s ease-in-out infinite;
+}
+
+.viber-float::before {
+  content: 'Zakaži na Viber';
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(44,44,44,0.85);
+  color: #fff;
+  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.viber-float:hover::before {
+  opacity: 1;
 }
 
 .viber-float:hover {
@@ -1241,6 +1344,10 @@ ul {
    RESPONSIVE — TABLET (max 900px)
    ============================================================ */
 @media (max-width: 900px) {
+  .section-pad {
+    padding: 64px 0;
+  }
+
   .hero-cards {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1320,7 +1427,7 @@ ul {
   }
 
   .section-pad {
-    padding: 3.5rem 0;
+    padding: 48px 0;
   }
 
   /* Hero cards: 2 cols on mobile → stack to 1 */
@@ -1363,8 +1470,13 @@ ul {
   }
 
   .tab-btn {
-    padding: 0.75rem 1.2rem;
+    padding: 10px 16px;
     font-size: 0.8rem;
+  }
+
+  .viber-float {
+    bottom: 16px;
+    right: 16px;
   }
 
   .about__detail {
