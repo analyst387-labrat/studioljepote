@@ -276,6 +276,11 @@ ul {
   width: 100%;
 }
 
+.nav__links .btn::after,
+.nav__links .btn:hover::after {
+  display: none;
+}
+
 /* Hamburger dugme — vidljivo samo na mobilnom */
 .nav__hamburger {
   display: none;
@@ -475,7 +480,9 @@ ul {
 .about__image-wrap {
   position: relative;
   border-radius: var(--radius);
-  overflow: hidden;
+  /* overflow: hidden removed — it was clipping ::after's bottom/right but
+     leaving the top border of the decorative frame visible across the image.
+     Border-radius + clipping is now handled on the img itself. */
   aspect-ratio: 4/5;
   /* Fallback ako about.jpg ne postoji */
   background: linear-gradient(145deg, #e8d5d1 0%, #f0e0c8 100%);
@@ -485,21 +492,10 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
 }
 
-/* Zlatni ukrasni okvir pomaknut za offset efekt */
-.about__image-wrap::after {
-  content: '';
-  position: absolute;
-  bottom: -1rem;
-  right: -1rem;
-  width: 70%;
-  height: 70%;
-  border: 2px solid var(--gold);
-  opacity: 0.5;
-  border-radius: var(--radius);
-  pointer-events: none;
-}
 
 .about__text {
   padding: 1rem 0;
@@ -1263,6 +1259,40 @@ ul {
   display: block;
 }
 
+/* Review CTA */
+.contact__review {
+  text-align: center;
+  padding-top: 48px;
+}
+
+.contact__review-text {
+  font-family: 'Jost', sans-serif;
+  font-size: var(--font-small);
+  color: #888;
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
+}
+
+.btn-review {
+  display: inline-block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  border-radius: 999px;
+  padding: 13px 32px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-review:hover {
+  background: var(--gold);
+  color: #fff;
+}
+
 /* ============================================================
    9. FOOTER
    ============================================================ */
@@ -1369,10 +1399,15 @@ ul {
   box-shadow: 0 14px 38px rgba(115,96,242,0.75);
 }
 
-.viber-float svg {
-  width: 30px;
-  height: 30px;
-  fill: var(--white);
+.viber-float i {
+  font-size: 26px;
+  color: var(--white);
+  line-height: 1;
+}
+
+.btn-viber i {
+  font-size: 20px;
+  line-height: 1;
 }
 
 /* ============================================================
@@ -1406,9 +1441,6 @@ ul {
     max-height: 380px;
   }
 
-  .about__image-wrap::after {
-    display: none;
-  }
 
   .contact__grid {
     grid-template-columns: 1fr;
